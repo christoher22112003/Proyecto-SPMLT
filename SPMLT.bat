@@ -3,7 +3,7 @@
 @REM :
 @REM Para poder realizar la creacion de un lote ne un archivo .bat se utiliza <:nombre_del_lote>
 
-  :menu_principal
+  :Menu_principal
     @REM ECHO
     @REM Para la impresion de algun tipo de texto en la pantalla se utiliza en <echo  texto_que_se_desea_imprimir>
     @REM Tambien se puede utilizar para poder realizar menus de de opciones simples 
@@ -37,8 +37,9 @@
     echo ==   Procesos los cuales se utilizan en el envio tareas        == 
     echo ==   1.Escaneo de las tareas                                   ==
   	echo ==   2.Unir los archivos escaneados                            ==
-	  echo ==   3.Envio de las tareas                                     ==
-	  echo ==   4.Salir                                                   ==
+	echo ==   3.Envio de las tareas                                     ==
+    echo ==   4.Realizar todo el proceso
+	echo ==   5.Salir                                                   ==
     echo  ---------------------------------------------------------------
 
     @REM SET
@@ -55,7 +56,8 @@
     if %respuesta%==1 goto Escaneo_de_tareas
     if %respuesta%==2 goto Union_de_tareas
     if %respuesta%==3 goto Envio_de_tareas
-    if %respuesta%==4 goto Salir
+    if %respuesta%==4 goto Proceso_completo
+    if %respuesta%==5 goto Salir
 
   :Escaneo_de_tareas
 
@@ -69,10 +71,22 @@
     echo ==   3.Abrir todos los programas                                 ==
     echo  -----------------------------------------------------------------
     echo ==   4.Volver al menu principal                                  ==
-    echo ==   6.Salir                                                     ==
+    echo ==   5.Salir                                                     ==
     echo  -----------------------------------------------------------------
 
     set /p respuesta= Que programa necesita abrir?
+
+    if %respuesta%==1 goto Escaneo_de_tareas*Epson*Scanner
+    if %respuesta%==2 goto Escaneo_de_tareas*Explorador*archivos*escaneados
+    if %respuesta%==3 goto Escaneo_de_tareas*Abrir*todos*programas*escaneo
+    if %respuesta%==4 goto Menu_principal
+    if %respuesta%==5 goto Salir
+
+      :Escaneo_de_tareas*Epson*Scanner
+        
+      :Escaneo_de_tareas*Explorador*archivos*escaneados
+
+      :Escaneo_de_tareas*Abrir*todos*programas*escaneo
 
   :Union_de_tareas
 
@@ -86,10 +100,22 @@
     echo ==   3.Abrir todos los programas                                    ==
     echo  --------------------------------------------------------------------
     echo ==   4.Volver al menu principal                                     ==
-    echo ==   6.Salir                                                        ==
+    echo ==   5.Salir                                                        ==
     echo  --------------------------------------------------------------------
 
     set /p respuesta= Que programa necesita abrir?
+
+    if %respuesta%==1 goto Union_de_tareas*Nitro*PDF
+    if %respuesta%==2 goto Union_de_tareas*Explorador*archivos*escaneados*combinados
+    if %respuesta%==3 goto Union_de_tareas*Abrir*todos*programas*union
+    if %respuesta%==4 goto Menu_principal
+    if %respuesta%==5 goto Salir
+
+      :Union_de_tareas*Nitro*PDF
+
+      :Union_de_tareas*Explorador*archivos*escaneados*combinados
+
+      :Union_de_tareas*Abrir*todos*programas*union
     
   :Envio_de_tareas
 
@@ -101,7 +127,7 @@
   	echo ==   2.Correo electronico                                      ==
     echo  ---------------------------------------------------------------
     echo ==   4.Volver al menu principal                                ==
-    echo ==   6.Salir                                                   ==
+    echo ==   5.Salir                                                   ==
     echo  ---------------------------------------------------------------
 
     set /p respuesta= Que programa necesita abrir?
@@ -127,6 +153,19 @@
 
             set /p respuesta= Que programa necesita abrir?
 
+            if %respuesta%==1 goto Envio_de_tareas*Opera*GX*Share*point
+            if %respuesta%==2 goto Envio_de_tareas*Explorador*archivos*combinados
+            if %respuesta%==3 goto Envio_de_tareas*Abrir*todos*programas*enviar*Share*point
+            if %respuesta%==4 goto Envio_de_tareas
+            if %respuesta%==5 goto Menu_principal
+            if %respuesta%==6 goto Salir
+
+              :Envio_de_tareas*Opera*GX*Share*point
+
+              :Envio_de_tareas*Explorador*archivos*combinados
+
+              :Envio_de_tareas*Abrir*todos*programas*enviar*Share*point
+
       :Envio_de_tareas-Correo-electronico 
 
             cls 
@@ -144,6 +183,21 @@
             echo  ----------------------------------------------------------------
 
             set /p respuesta= Que programa necesita abrir?
+
+            if %respuesta%==1 goto Envio_de_tareas*Thunderbird
+            if %respuesta%==2 goto Envio_de_tareas*Explorador*archivos*combinados
+            if %respuesta%==3 goto Envio_de_tareas*Abrir*todos*programas*enviar*Thunderbird
+            if %respuesta%==4 goto Envio_de_tareas
+            if %respuesta%==5 goto Menu_principal
+            if %respuesta%==6 goto Salir
+
+              :Envio_de_tareas*Thunderbird
+
+              :Envio_de_tareas*Explorador*archivos*combinados
+
+              :Envio_de_tareas*Abrir*todos*programas*enviar*Thunderbird
+
+  :Proceso_completo
 
   :Salir
 
