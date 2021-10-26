@@ -8,7 +8,8 @@
     @REM Para la impresion de algun tipo de texto en la pantalla se utiliza en <echo  texto_que_se_desea_imprimir>
     @REM Tambien se puede utilizar para poder realizar menus de de opciones simples 
     @REM El arte en el cual esta ilustrada la torre se denomina <ASCII> pagina para poder hacer arte asi es https://es.rakko.tools/tools/68/
-
+    
+    cls
     echo                                ()
     echo                                /\
     echo                               I  I
@@ -108,10 +109,71 @@
     if %respuesta%==5 goto Salir
 
       :Escaneo_de_tareas*Epson*Scanner
-        
+
+        cd "C:\Program Files (x86)\epson\Epson Scan 2\Core"
+			  dir "C:\Program Files (x86)\epson\Epson Scan 2\Core"
+			  start es2launcher.exe
+
+        echo   #####     ###    ####      ######  ###### 
+        echo  ##   ##   ## ##    ##         ##     ##  ## 
+        echo  ##       ##   ##   ##         ##     ##  ## 
+        echo   #####   ##   ##   ##         ##     ##### 
+        echo       ##  #######   ##         ##     ## ## 
+        echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
+        echo   #####   ##   ##  #######   ######  #### ## 
+        echo                                            .
+        echo  ******************************************
+
+        set /p respuesta= ** Termino de realizar las actividades?   **
+
+        if %respuesta%==si goto Menu_principal
+        if %respuesta%==no goto Escaneo_de_tareas
+
       :Escaneo_de_tareas*Explorador*archivos*escaneados
 
+        cd "%SystemRoot%"
+			  dir "%SystemRoot%"
+			  start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Escaneados"
+
+        echo   #####     ###    ####      ######  ###### 
+        echo  ##   ##   ## ##    ##         ##     ##  ## 
+        echo  ##       ##   ##   ##         ##     ##  ## 
+        echo   #####   ##   ##   ##         ##     ##### 
+        echo       ##  #######   ##         ##     ## ## 
+        echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
+        echo   #####   ##   ##  #######   ######  #### ## 
+        echo                                            .
+        echo  ******************************************
+
+        set /p respuesta= ** Termino de realizar las actividades?   **
+
+        if %respuesta%==si goto Menu_principal
+        if %respuesta%==no goto Escaneo_de_tareas
+
       :Escaneo_de_tareas*Abrir*todos*programas*escaneo
+
+        cd "C:\Program Files (x86)\epson\Epson Scan 2\Core"
+        dir "C:\Program Files (x86)\epson\Epson Scan 2\Core"
+        start es2launcher.exe
+
+        cd "%SystemRoot%"
+        dir "%SystemRoot%"
+        start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Escaneados"
+
+        echo   #####     ###    ####      ######  ###### 
+        echo  ##   ##   ## ##    ##         ##     ##  ## 
+        echo  ##       ##   ##   ##         ##     ##  ## 
+        echo   #####   ##   ##   ##         ##     ##### 
+        echo       ##  #######   ##         ##     ## ## 
+        echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
+        echo   #####   ##   ##  #######   ######  #### ## 
+        echo                                            .
+        echo  ******************************************
+
+        set /p respuesta= ** Termino de realizar las actividades?   **
+
+        if %respuesta%==si goto Menu_principal
+        if %respuesta%==no goto Escaneo_de_tareas
 
   :Union_de_tareas
 
@@ -146,9 +208,72 @@
 
       :Union_de_tareas*Nitro*PDF
 
+        cd "C:\Program Files\Nitro\Pro\13"
+        dir "C:\Program Files\Nitro\Pro\13"
+        start NitroPDF.exe
+
+        echo   #####     ###    ####      ######  ###### 
+        echo  ##   ##   ## ##    ##         ##     ##  ## 
+        echo  ##       ##   ##   ##         ##     ##  ## 
+        echo   #####   ##   ##   ##         ##     ##### 
+        echo       ##  #######   ##         ##     ## ## 
+        echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
+        echo   #####   ##   ##  #######   ######  #### ## 
+        echo                                            .
+        echo  ******************************************
+
+        set /p respuesta= ** Termino de realizar las actividades?   **
+
+        if %respuesta%==si goto Menu_principal
+        if %respuesta%==no goto Union_de_tareas
+
       :Union_de_tareas*Explorador*archivos*escaneados*combinados
 
+        cd "%SystemRoot%"
+			  dir "%SystemRoot%"
+			  start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Escaneados"
+        start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Combinados"
+
+        echo   #####     ###    ####      ######  ###### 
+        echo  ##   ##   ## ##    ##         ##     ##  ## 
+        echo  ##       ##   ##   ##         ##     ##  ## 
+        echo   #####   ##   ##   ##         ##     ##### 
+        echo       ##  #######   ##         ##     ## ## 
+        echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
+        echo   #####   ##   ##  #######   ######  #### ## 
+        echo                                            .
+        echo  ******************************************
+
+        set /p respuesta= ** Termino de realizar las actividades?   **
+
+        if %respuesta%==si goto Menu_principal
+        if %respuesta%==no goto Union_de_tareas
+
       :Union_de_tareas*Abrir*todos*programas*union
+
+        cd "C:\Program Files\Nitro\Pro\13"
+        dir "C:\Program Files\Nitro\Pro\13"
+        start NitroPDF.exe
+
+        cd "%SystemRoot%"
+			  dir "%SystemRoot%"
+			  start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Escaneados"
+        start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Combinados"
+
+        echo   #####     ###    ####      ######  ###### 
+        echo  ##   ##   ## ##    ##         ##     ##  ## 
+        echo  ##       ##   ##   ##         ##     ##  ## 
+        echo   #####   ##   ##   ##         ##     ##### 
+        echo       ##  #######   ##         ##     ## ## 
+        echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
+        echo   #####   ##   ##  #######   ######  #### ## 
+        echo                                            .
+        echo  ******************************************
+
+        set /p respuesta= ** Termino de realizar las actividades?   **
+
+        if %respuesta%==si goto Menu_principal
+        if %respuesta%==no goto Union_de_tareas
     
   :Envio_de_tareas
 
@@ -202,18 +327,79 @@
 
             set /p respuesta= Que programa necesita abrir?
 
-            if %respuesta%==1 goto Envio_de_tareas*Opera*GX*Share*point
-            if %respuesta%==2 goto Envio_de_tareas*Explorador*archivos*combinados
-            if %respuesta%==3 goto Envio_de_tareas*Abrir*todos*programas*enviar*Share*point
+            if %respuesta%==1 goto Envio_de_tareas-Share-point*Opera*GX*Share*point
+            if %respuesta%==2 goto Envio_de_tareas-Share-point*Explorador*archivos*combinados
+            if %respuesta%==3 goto Envio_de_tareas-Share-point*Abrir*todos*programas*enviar*Share*point
             if %respuesta%==4 goto Envio_de_tareas
             if %respuesta%==5 goto Menu_principal
             if %respuesta%==6 goto Salir
 
-              :Envio_de_tareas*Opera*GX*Share*point
+              :Envio_de_tareas-Share-point*Opera*GX*Share*point
 
-              :Envio_de_tareas*Explorador*archivos*combinados
+                cd "C:\Users\Christopher Muzo\AppData\Local\Programs\Opera GX"
+					      dir "C:\Users\Christopher Muzo\AppData\Local\Programs\Opera GX"
+				      	start https://educacionec-my.sharepoint.com/:f:/g/personal/martha_ahqui_educacion_gob_ec/Enp4DXltIGxOm4MMf7YVxn0BtBuYp9v-Bg-F_gF-PG1J1A?e=ii8uG3
 
-              :Envio_de_tareas*Abrir*todos*programas*enviar*Share*point
+                echo   #####     ###    ####      ######  ###### 
+                echo  ##   ##   ## ##    ##         ##     ##  ## 
+                echo  ##       ##   ##   ##         ##     ##  ## 
+                echo   #####   ##   ##   ##         ##     ##### 
+                echo       ##  #######   ##         ##     ## ## 
+                echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
+                echo   #####   ##   ##  #######   ######  #### ## 
+                echo                                            .
+                echo  ******************************************
+
+                set /p respuesta= ** Termino de realizar las actividades?   **
+
+                if %respuesta%==si goto Menu_principal
+                if %respuesta%==no goto Envio_de_tareas
+
+              :Envio_de_tareas-Share-point*Explorador*archivos*combinados
+                
+                cd "%SystemRoot%"
+                dir "%SystemRoot%"
+                start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Combinados"
+
+                echo   #####     ###    ####      ######  ###### 
+                echo  ##   ##   ## ##    ##         ##     ##  ## 
+                echo  ##       ##   ##   ##         ##     ##  ## 
+                echo   #####   ##   ##   ##         ##     ##### 
+                echo       ##  #######   ##         ##     ## ## 
+                echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
+                echo   #####   ##   ##  #######   ######  #### ## 
+                echo                                            .
+                echo  ******************************************
+
+                set /p respuesta= ** Termino de realizar las actividades?   **
+
+                if %respuesta%==si goto Menu_principal
+                if %respuesta%==no goto Envio_de_tareas
+
+              :Envio_de_tareas-Share-point*Abrir*todos*programas*enviar*Share*point
+
+                cd "C:\Users\Christopher Muzo\AppData\Local\Programs\Opera GX"
+                dir "C:\Users\Christopher Muzo\AppData\Local\Programs\Opera GX"
+                start https://educacionec-my.sharepoint.com/:f:/g/personal/martha_ashqui_educacion_gob_ec/Enp4DXltIGxOm4MMf7YVxn0BtBuYp9v-Bg-F_gF-PG1J1A?e=ii8uG3
+
+                cd "%SystemRoot%"
+                dir "%SystemRoot%"
+                start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Combinados"
+
+                echo   #####     ###    ####      ######  ###### 
+                echo  ##   ##   ## ##    ##         ##     ##  ## 
+                echo  ##       ##   ##   ##         ##     ##  ## 
+                echo   #####   ##   ##   ##         ##     ##### 
+                echo       ##  #######   ##         ##     ## ## 
+                echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
+                echo   #####   ##   ##  #######   ######  #### ## 
+                echo                                            .
+                echo  ******************************************
+
+                set /p respuesta= ** Termino de realizar las actividades?   **
+
+                if %respuesta%==si goto Menu_principal
+                if %respuesta%==no goto Envio_de_tareas
 
       :Envio_de_tareas-Correo-electronico 
 
@@ -241,18 +427,79 @@
 
             set /p respuesta= Que programa necesita abrir?
 
-            if %respuesta%==1 goto Envio_de_tareas*Thunderbird
-            if %respuesta%==2 goto Envio_de_tareas*Explorador*archivos*combinados
-            if %respuesta%==3 goto Envio_de_tareas*Abrir*todos*programas*enviar*Thunderbird
+            if %respuesta%==1 goto Envio_de_tareas-Correo-electronico*Thunderbird
+            if %respuesta%==2 goto Envio_de_tareas-Correo-electronico*Explorador*archivos*combinados
+            if %respuesta%==3 goto Envio_de_tareas-Correo-electronico*Abrir*todos*programas*enviar*Thunderbird
             if %respuesta%==4 goto Envio_de_tareas
             if %respuesta%==5 goto Menu_principal
             if %respuesta%==6 goto Salir
 
-              :Envio_de_tareas*Thunderbird
+              :Envio_de_tareas-Correo-electronico*Thunderbird
 
-              :Envio_de_tareas*Explorador*archivos*combinados
+                cd "C:\Program Files\Mozilla Thunderbird"
+                dir "C:\Program Files\Mozilla Thunderbird"
+                start thunderbird.exe
 
-              :Envio_de_tareas*Abrir*todos*programas*enviar*Thunderbird
+                echo   #####     ###    ####      ######  ###### 
+                echo  ##   ##   ## ##    ##         ##     ##  ## 
+                echo  ##       ##   ##   ##         ##     ##  ## 
+                echo   #####   ##   ##   ##         ##     ##### 
+                echo       ##  #######   ##         ##     ## ## 
+                echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
+                echo   #####   ##   ##  #######   ######  #### ## 
+                echo                                            .
+                echo  ******************************************
+
+                set /p respuesta= ** Termino de realizar las actividades?   **
+
+                if %respuesta%==si goto Menu_principal
+                if %respuesta%==no goto Envio_de_tareas
+
+              :Envio_de_tareas-Correo-electronico*Explorador*archivos*combinados
+
+                cd "%SystemRoot%"
+                dir "%SystemRoot%"
+                start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Combinados"
+
+                echo   #####     ###    ####      ######  ###### 
+                echo  ##   ##   ## ##    ##         ##     ##  ## 
+                echo  ##       ##   ##   ##         ##     ##  ## 
+                echo   #####   ##   ##   ##         ##     ##### 
+                echo       ##  #######   ##         ##     ## ## 
+                echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
+                echo   #####   ##   ##  #######   ######  #### ## 
+                echo                                            .
+                echo  ******************************************
+
+                set /p respuesta= ** Termino de realizar las actividades?   **
+
+                if %respuesta%==si goto Menu_principal
+                if %respuesta%==no goto Envio_de_tareas
+
+              :Envio_de_tareas-Correo-electronico*Abrir*todos*programas*enviar*Thunderbird
+
+                cd "C:\Program Files\Mozilla Thunderbird"
+                dir "C:\Program Files\Mozilla Thunderbird"
+                start thunderbird.exe
+
+                cd "%SystemRoot%"
+                dir "%SystemRoot%"
+                start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Combinados"
+
+                echo   #####     ###    ####      ######  ###### 
+                echo  ##   ##   ## ##    ##         ##     ##  ## 
+                echo  ##       ##   ##   ##         ##     ##  ## 
+                echo   #####   ##   ##   ##         ##     ##### 
+                echo       ##  #######   ##         ##     ## ## 
+                echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
+                echo   #####   ##   ##  #######   ######  #### ## 
+                echo                                            .
+                echo  ******************************************
+
+                set /p respuesta= ** Termino de realizar las actividades?   **
+
+                if %respuesta%==si goto Menu_principal
+                if %respuesta%==no goto Envio_de_tareas
 
   :Proceso_completo
 
@@ -281,8 +528,8 @@
     echo ==   4.Salir                                                    ==
     echo  ----------------------------------------------------------------
 
-    set /p Deseas empezar el proceso completo del envio de tareas ?
-    
+    set /p respuesta= Deseas empezar el proceso completo del envio de tareas ?  
+
     if %respuesta%==1 goto Proceso_completo-Si
     if %respuesta%==2 goto Menu_principal
     if %respuesta%==3 goto Menu_principal
@@ -292,6 +539,97 @@
 
       :Proceso_completo-si
 
+        cd "C:\Program Files (x86)\epson\Epson Scan 2\Core"
+        dir "C:\Program Files (x86)\epson\Epson Scan 2\Core"
+        start es2launcher.exe
+
+        cd "%SystemRoot%"
+        dir "%SystemRoot%"
+        start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Escaneados"
+
+        cd "C:\Program Files\Nitro\Pro\13"
+        dir "C:\Program Files\Nitro\Pro\13"
+        start NitroPDF.exe
+
+        cd "%SystemRoot%"
+	    dir "%SystemRoot%"
+		start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Escaneados"
+        start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Combinados"
+
+        echo     ##   ##                    #######                    ###### 
+        echo     ### ###                     ##   #                    # ## # 
+        echo     #######                     ## #                        ## 
+        echo     #######                     ####                        ## 
+        echo     ## # ##                     ## #                        ## 
+        echo     ##   ##                     ##   #                      ## 
+        echo     ##   ##                    #######                     #### 
+        echo                                                                  .
+
+        echo  ****************************************************************
+        echo **                  Metodos de envio de tareas                  **
+        echo  ----------------------------------------------------------------
+        echo ==   1.Share Point
+        echo ==   2.Correo Electronico
+        echo ==   3.Volver al menu principal                                 ==
+        echo ==   4.Salir                                                    ==
+        echo  ----------------------------------------------------------------
+
+        set /p respuesta= Porque metodo desea enviar las tareas?
+
+        if %respuesta%==1 goto Envio_de_tareas-Share-point*Abrir*todos*programas*enviar*Share*point
+        if %respuesta%==2 goto Envio_de_tareas-Correo-electronico*Abrir*todos*programas*enviar*Thunderbird
+        if %respuesta%==3 goto Menu_principal
+        if %respuesta%==4 goto Salir
+
+          :Envio_de_tareas-Share-point*Abrir*todos*programas*enviar*Share*point
+
+            cd "C:\Users\Christopher Muzo\AppData\Local\Programs\Opera GX"
+            dir "C:\Users\Christopher Muzo\AppData\Local\Programs\Opera GX"
+            start https://educacionec-my.sharepoint.com/:f:/g/personal/martha_ashqui_educacion_gob_ec/Enp4DXltIGxOm4MMf7YVxn0BtBuYp9v-Bg-F_gF-PG1J1A?e=ii8uG3
+
+            cd "%SystemRoot%"
+            dir "%SystemRoot%"
+            start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Combinados"
+
+            echo   #####     ###    ####      ######  ###### 
+            echo  ##   ##   ## ##    ##         ##     ##  ## 
+            echo  ##       ##   ##   ##         ##     ##  ## 
+            echo   #####   ##   ##   ##         ##     ##### 
+            echo       ##  #######   ##         ##     ## ## 
+            echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
+            echo   #####   ##   ##  #######   ######  #### ## 
+            echo                                            .
+            echo  ******************************************
+
+            set /p respuesta= ** Termino de realizar las actividades?   **
+
+            if %respuesta%==si goto Menu_principal
+            if %respuesta%==no goto Proceso_completo
+
+          :Envio_de_tareas-Correo-electronico*Abrir*todos*programas*enviar*Thunderbird
+
+            cd "C:\Program Files\Mozilla Thunderbird"
+            dir "C:\Program Files\Mozilla Thunderbird"
+            start thunderbird.exe
+
+            cd "%SystemRoot%"
+            dir "%SystemRoot%"
+            start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Combinados"
+
+            echo   #####     ###    ####      ######  ###### 
+            echo  ##   ##   ## ##    ##         ##     ##  ## 
+            echo  ##       ##   ##   ##         ##     ##  ## 
+            echo   #####   ##   ##   ##         ##     ##### 
+            echo       ##  #######   ##         ##     ## ## 
+            echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
+            echo   #####   ##   ##  #######   ######  #### ## 
+            echo                                            .
+            echo  ******************************************
+
+            set /p respuesta= ** Termino de realizar las actividades?   **
+
+            if %respuesta%==si goto Menu_principal
+            if %respuesta%==no goto Proceso_completo
   :Salir
 
     exit
