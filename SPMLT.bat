@@ -7,39 +7,56 @@
     @REM ECHO
     @REM Para la impresion de algun tipo de texto en la pantalla se utiliza en <echo  texto_que_se_desea_imprimir>
     @REM Tambien se puede utilizar para poder realizar menus de de opciones simples 
-    @REM El arte en el cual esta ilustrada la torre se denomina <ASCII> 
+    @REM El arte en el cual esta ilustrada la torre se denomina <ASCII> pagina para poder hacer arte asi es https://es.rakko.tools/tools/68/
 
-    echo                                   ()
-    echo                                   /\
-    echo                                  I  I
-    echo                                  ====
-    echo                                   XX
-    echo                                  xXXx
-    echo                                  XXXX
-    echo                                  XXXX
-    echo                                  XXXX
-    echo                                 xXXXXx
-    echo                                 XXXXXX
-    echo                                 XXXXXX
-    echo                                xXXXXXXx
-    echo                                XXXXXXXX
-    echo                               xXXXXXXXXx
-    echo                               XXXXXXXXXX
-    echo                              XXXXX  XXXXX
-    echo                             xXXXX"  "XXXXx
-    echo                            XXXXXxxxxxxXXXXX
-    echo                          xXXXXX""""""""XXXXXx
-    echo                       xXXXXXX"        "XXXXXXx
-    echo                     xxXXXXXXX            XXXXXXXxx
+    echo                                ()
+    echo                                /\
+    echo                               I  I
+    echo                               ====
+    echo                                XX
+    echo                               xXXx
+    echo                               XXXX
+    echo                               XXXX
+    echo                               XXXX
+    echo                              xXXXXx
+    echo                              XXXXXX
+    echo                              XXXXXX
+    echo                             xXXXXXXx
+    echo                             XXXXXXXX
+    echo                            xXXXXXXXXx
+    echo                            XXXXXXXXXX
+    echo                           XXXXX  XXXXX
+    echo                          xXXXX"  "XXXXx
+    echo                         XXXXXxxxxxxXXXXX
+    echo                       xXXXXX""""""""XXXXXx
+    echo                    xXXXXXX"        "XXXXXXx
+    echo                  xxXXXXXXX            XXXXXXXxx
+    echo                                                                 . 
+    echo            #######  ##   ##  ##   ##   ######   ##### 
+    echo             ##   #  ###  ##  ##   ##     ##    ### ### 
+    echo             ##      #### ##  ##   ##     ##    ##   ## 
+    echo             ####    #######   ## ##      ##    ##   ## 
+    echo             ##      ## ####   ## ##      ##    ##   ## 
+    echo             ##   #  ##  ###    ###       ##    ### ### 
+    echo            #######  ##   ##    ###     ######   ##### 
+    echo                                                                 . 
+    echo         # #####   ###    ######   #######    ###     ##### 
+    echo        ## ## ##  ## ##    ##  ##   ##   #   ## ##   ##   ## 
+    echo           ##    ##   ##   ##  ##   ##      ##   ##  ## 
+    echo           ##    ##   ##   #####    ####    ##   ##   ##### 
+    echo           ##    #######   ## ##    ##      #######       ## 
+    echo           ##    ##   ##   ## ##    ##   #  ##   ##  ##   ## 
+    echo          ####   ##   ##  #### ##  #######  ##   ##   ##### 
+    echo                                                                 . 
     echo  ***************************************************************
     echo **           Bienvenido al script de envio de tareas           **
     echo  ---------------------------------------------------------------
     echo ==   Procesos los cuales se utilizan en el envio tareas        == 
     echo ==   1.Escaneo de las tareas                                   ==
   	echo ==   2.Unir los archivos escaneados                            ==
-	echo ==   3.Envio de las tareas                                     ==
+	  echo ==   3.Envio de las tareas                                     ==
     echo ==   4.Realizar todo el proceso
-	echo ==   5.Salir                                                   ==
+	  echo ==   5.Salir                                                   ==
     echo  ---------------------------------------------------------------
 
     @REM SET
@@ -62,6 +79,14 @@
   :Escaneo_de_tareas
 
     cls 
+    echo  #######   #####     ####     ###    ##   ##  #######    ###    ###### 
+    echo   ##   #  ##   ##   ##  ##   ## ##   ###  ##   ##   #   ## ##    ##  ## 
+    echo   ##      ##       ##       ##   ##  #### ##   ##      ##   ##   ##  ## 
+    echo   ####     #####   ##       ##   ##  #######   ####    ##   ##   ##### 
+    echo   ##           ##  ##       #######  ## ####   ##      #######   ## ## 
+    echo   ##   #  ##   ##   ##  ##  ##   ##  ##  ###   ##   #  ##   ##   ## ## 
+    echo  #######   #####     ####   ##   ##  ##   ##  #######  ##   ##  #### ## 
+    echo                                                                         .                     
     echo  *****************************************************************
     echo **    Programas los cuales se utilizan en el excaneado de tareas **
     echo  -----------------------------------------------------------------
@@ -91,6 +116,14 @@
   :Union_de_tareas
 
     cls
+    echo    ####    #####   ##   ##  ######    ######  ##   ##    ###    ###### 
+    echo   ##  ##  ### ###  ### ###   ##  ##     ##    ###  ##   ## ##    ##  ## 
+    echo  ##       ##   ##  #######   ##  ##     ##    #### ##  ##   ##   ##  ## 
+    echo  ##       ##   ##  ## # ##   #####      ##    #######  ##   ##   ##### 
+    echo  ##       ##   ##  ##   ##   ##  ##     ##    ## ####  #######   ## ## 
+    echo   ##  ##  ### ###  ##   ##   ##  ##     ##    ##  ###  ##   ##   ## ## 
+    echo    ####    #####   ### ###  ######    ######  ##   ##  ##   ##  #### ## 
+    echo                                                                          .
     echo  ********************************************************************
     echo **    Programas los cuales se utilizan en la union de tareas        **
     echo  --------------------------------------------------------------------
@@ -120,6 +153,14 @@
   :Envio_de_tareas
 
     cls 
+    echo             #######  ##   ##  ##   ##   ####     ##### 
+    echo              ##   #  ###  ##  ##   ##    ##     ##   ## 
+    echo              ## #    #### ##   ## ##     ##     ##   ## 
+    echo              ####    ## ####   ## ##     ##     ##   ## 
+    echo              ## #    ##  ###    ###      ##     ##   ## 
+    echo              ##   #  ##   ##    ###      ##     ##   ## 
+    echo             #######  ##   ##     #      ####     #####
+    echo                                                                .
     echo  ***************************************************************
     echo **   Metodos los cuales puede enviar las tareas                **
     echo  ---------------------------------------------------------------
@@ -138,6 +179,14 @@
       :Envio_de_tareas-Share-point
 
             cls 
+            echo   #######  ##   ##  ##   ##   ####     #####             #####            ###### 
+            echo    ##   #  ###  ##  ##   ##    ##     ##   ##           ##   ##            ##  ## 
+            echo    ## #    #### ##   ## ##     ##     ##   ##           #                  ##  ## 
+            echo    ####    ## ####   ## ##     ##     ##   ##            #####             ##### 
+            echo    ## #    ##  ###    ###      ##     ##   ##                ##            ## 
+            echo    ##   #  ##   ##    ###      ##     ##   ##           ##   ##    ##      ## 
+            echo   #######  ##   ##     #      ####     #####             #####     ##     #### 
+            echo                                                                                  .
             echo  ****************************************************************
             echo **    Programas los cuales se utilizan en el envio de tareas SP **
             echo  ----------------------------------------------------------------
@@ -169,6 +218,14 @@
       :Envio_de_tareas-Correo-electronico 
 
             cls 
+            echo   #######  ##   ##  ##   ##   ####     #####              ####            ####### 
+            echo    ##   #  ###  ##  ##   ##    ##     ##   ##            ##  ##            ##   # 
+            echo    ## #    #### ##   ## ##     ##     ##   ##           ##                 ## # 
+            echo    ####    ## ####   ## ##     ##     ##   ##           ##                 #### 
+            echo    ## #    ##  ###    ###      ##     ##   ##           ##                 ## # 
+            echo    ##   #  ##   ##    ###      ##     ##   ##            ##  ##    ##      ##   # 
+            echo   #######  ##   ##     #      ####     #####              ####     ##     ####### 
+            echo                                                                  .
             echo  ****************************************************************
             echo **    Programas los cuales se utilizan en el envio de tareas CE **
             echo  ----------------------------------------------------------------
@@ -198,6 +255,42 @@
               :Envio_de_tareas*Abrir*todos*programas*enviar*Thunderbird
 
   :Proceso_completo
+
+    cls
+    echo        ######   ######    #####     ####   #######   #####    ##### 
+    echo         ##  ##   ##  ##  ##   ##   ##  ##   ##   #  ##   ##  ##   ## 
+    echo         ##  ##   ##  ##  ##   ##  ##        ## #    #        ##   ## 
+    echo         #####    #####   ##   ##  ##        ####     #####   ##   ## 
+    echo         ##       ## ##   ##   ##  ##        ## #         ##  ##   ## 
+    echo         ##       ##  ##  ##   ##   ##  ##   ##   #  ##   ##  ##   ## 
+    echo        ####     #### ##   #####     ####   #######   #####    ##### 
+    echo                                                                         .
+    echo     ####    #####   ##   ##  ######   ####     #######  ######    ##### 
+    echo    ##  ##  ##   ##  ### ###   ##  ##   ##       ##   #  # ## #   ##   ## 
+    echo   ##       ##   ##  #######   ##  ##   ##       ## #      ##     ##   ## 
+    echo   ##       ##   ##  #######   #####    ##       ####      ##     ##   ## 
+    echo   ##       ##   ##  ## # ##   ##       ##   #   ## #      ##     ##   ## 
+    echo    ##  ##  ##   ##  ##   ##   ##       ##  ##   ##   #    ##     ##   ## 
+    echo     ####    #####   ##   ##  ####     #######  #######   ####     ##### 
+    echo  ****************************************************************
+    echo **             Proceso completo de envio de tareas              **
+    echo  ----------------------------------------------------------------
+    echo ==   1.Si
+    echo ==   2.No
+    echo ==   3.Volver al menu principal                                 ==
+    echo ==   4.Salir                                                    ==
+    echo  ----------------------------------------------------------------
+
+    set /p Deseas empezar el proceso completo del envio de tareas ?
+    
+    if %respuesta%==1 goto Proceso_completo-Si
+    if %respuesta%==2 goto Menu_principal
+    if %respuesta%==3 goto Menu_principal
+    if %respuesta%==4 goto Salir
+    if %respuesta%==si goto Proceso_completo-si
+    if %respuesta%==no goto Menu_principal
+
+      :Proceso_completo-si
 
   :Salir
 
