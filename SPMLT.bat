@@ -126,8 +126,20 @@
 
         set /p respuesta= ** Termino de realizar las actividades?   **
 
-        if %respuesta%==si goto Menu_principal
-        if %respuesta%==no goto Escaneo_de_tareas
+        if %respuesta%==si goto Escaneo_de_tareas*Epson*Scanner\Taskkill\si
+        if %respuesta%==no goto Escaneo_de_tareas*Epson*Scanner\Taskkill\no
+
+          :Escaneo_de_tareas*Epson*Scanner\Taskkill\si
+
+            taskkill /im es2launcher.exe /f
+
+            goto Menu_principal
+
+          :Escaneo_de_tareas*Epson*Scanner\Taskkill\no
+
+            taskkill /im es2launcher.exe /f
+
+            goto Escaneo_de_tareas            
 
       :Escaneo_de_tareas*Explorador*archivos*escaneados
 
@@ -147,8 +159,20 @@
 
         set /p respuesta= ** Termino de realizar las actividades?   **
 
-        if %respuesta%==si goto Menu_principal
-        if %respuesta%==no goto Escaneo_de_tareas
+        if %respuesta%==si goto Escaneo_de_tareas*Explorador*archivos*escaneados\Taskkill\si
+        if %respuesta%==no goto Escaneo_de_tareas*Explorador*archivos*escaneados\Taskkill\no
+
+          :Escaneo_de_tareas*Explorador*archivos*escaneados\Taskkill\si
+
+            taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+
+            goto Menu_principal
+
+          :Escaneo_de_tareas*Explorador*archivos*escaneados\Taskkill\no
+
+            taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+
+            goto Escaneo_de_tareas
 
       :Escaneo_de_tareas*Abrir*todos*programas*escaneo
 
@@ -172,8 +196,22 @@
 
         set /p respuesta= ** Termino de realizar las actividades?   **
 
-        if %respuesta%==si goto Menu_principal
-        if %respuesta%==no goto Escaneo_de_tareas
+        if %respuesta%==si goto Escaneo_de_tareas*Abrir*todos*programas*escaneo\Taskkill\si
+        if %respuesta%==no goto Escaneo_de_tareas*Abrir*todos*programas*escaneo\Taskkill\no
+
+          :Escaneo_de_tareas*Abrir*todos*programas*escaneo\Taskkill\si
+
+            taskkill /im es2launcher.exe /f
+            taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+            
+            goto Menu_principal
+
+          :Escaneo_de_tareas*Abrir*todos*programas*escaneo\Taskkill\no
+
+            taskkill /im es2launcher.exe /f
+            taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+            
+            goto Escaneo_de_tareas
 
   :Union_de_tareas
 
@@ -224,8 +262,20 @@
 
         set /p respuesta= ** Termino de realizar las actividades?   **
 
-        if %respuesta%==si goto Menu_principal
-        if %respuesta%==no goto Union_de_tareas
+        if %respuesta%==si goto Union_de_tareas*Nitro*PDF\Taskkill\si
+        if %respuesta%==no goto Union_de_tareas*Nitro*PDF\Taskkill\no
+
+          :Union_de_tareas*Nitro*PDF\Taskkill\si
+
+            taskkill /im NitroPDF.exe /f
+
+            goto Menu_principal
+
+          :Union_de_tareas*Nitro*PDF\Taskkill\no
+
+            taskkill /f /im NitroPDF.exe
+
+            goto Union_de_tareas
 
       :Union_de_tareas*Explorador*archivos*escaneados*combinados
 
@@ -246,8 +296,20 @@
 
         set /p respuesta= ** Termino de realizar las actividades?   **
 
-        if %respuesta%==si goto Menu_principal
-        if %respuesta%==no goto Union_de_tareas
+        if %respuesta%==si goto Union_de_tareas*Explorador*archivos*escaneados*combinados\Taskkill\si
+        if %respuesta%==no goto Union_de_tareas*Explorador*archivos*escaneados*combinados\Taskkill\no
+
+          :Union_de_tareas*Explorador*archivos*escaneados*combinados\Taskkill\si
+
+            taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+
+            goto Menu_principal
+
+          :Union_de_tareas*Explorador*archivos*escaneados*combinados\Taskkill\no
+
+            taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+
+            goto Union_de_tareas
 
       :Union_de_tareas*Abrir*todos*programas*union
 
@@ -272,9 +334,23 @@
 
         set /p respuesta= ** Termino de realizar las actividades?   **
 
-        if %respuesta%==si goto Menu_principal
-        if %respuesta%==no goto Union_de_tareas
-    
+        if %respuesta%==si goto Union_de_tareas*Abrir*todos*programas*union\Taskkill\si
+        if %respuesta%==no goto Union_de_tareas*Abrir*todos*programas*union\Taskkill\no
+
+          :Union_de_tareas*Abrir*todos*programas*union\Taskkill\si
+
+            taskkill /im NitroPDF.exe /f
+            taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+
+            goto Menu_principal
+
+          :Union_de_tareas*Abrir*todos*programas*union\Taskkill\no
+
+            taskkill /im NitroPDF.exe /f
+            taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+
+            goto Union_de_tareas
+
   :Envio_de_tareas
 
     cls 
@@ -315,7 +391,7 @@
             echo  ****************************************************************
             echo **    Programas los cuales se utilizan en el envio de tareas SP **
             echo  ----------------------------------------------------------------
-            echo ==   1.Opera GX en la pagina de Share Point                     ==
+            echo ==   1.Microsoft Edge en la pagina de Share Point               ==
             echo ==   2.Explorador de archivos en la carpeta combinados          ==
             echo  ----------------------------------------------------------------
             echo ==   3.Abrir todos los programas                                ==
@@ -327,18 +403,18 @@
 
             set /p respuesta= Que programa necesita abrir?
 
-            if %respuesta%==1 goto Envio_de_tareas-Share-point*Opera*GX*Share*point
+            if %respuesta%==1 goto Envio_de_tareas-Share-point*Share*point
             if %respuesta%==2 goto Envio_de_tareas-Share-point*Explorador*archivos*combinados
             if %respuesta%==3 goto Envio_de_tareas-Share-point*Abrir*todos*programas*enviar*Share*point
             if %respuesta%==4 goto Envio_de_tareas
             if %respuesta%==5 goto Menu_principal
             if %respuesta%==6 goto Salir
 
-              :Envio_de_tareas-Share-point*Opera*GX*Share*point
+              :Envio_de_tareas-Share-point*Share*point
 
-                cd "C:\Users\Christopher Muzo\AppData\Local\Programs\Opera GX"
-					      dir "C:\Users\Christopher Muzo\AppData\Local\Programs\Opera GX"
-				      	start https://educacionec-my.sharepoint.com/:f:/g/personal/martha_ahqui_educacion_gob_ec/Enp4DXltIGxOm4MMf7YVxn0BtBuYp9v-Bg-F_gF-PG1J1A?e=ii8uG3
+                cd "C:\Program Files (x86)\Microsoft\Edge\Application"
+					      dir "C:\Program Files (x86)\Microsoft\Edge\Application"
+				      	start msedge.exe msedge.exe https://educacionec-my.sharepoint.com/:f:/g/personal/martha_ashqui_educacion_gob_ec/Enp4DXltIGxOm4MMf7YVxn0BtBuYp9v-Bg-F_gF-PG1J1A?e=ii8uG3
 
                 echo   #####     ###    ####      ######  ###### 
                 echo  ##   ##   ## ##    ##         ##     ##  ## 
@@ -352,8 +428,20 @@
 
                 set /p respuesta= ** Termino de realizar las actividades?   **
 
-                if %respuesta%==si goto Menu_principal
-                if %respuesta%==no goto Envio_de_tareas
+                if %respuesta%==si goto Envio_de_tareas-Share-point*Share*point\Taskkill\si
+                if %respuesta%==no goto Envio_de_tareas-Share-point*Share*point\Taskkill\no
+
+                  :Envio_de_tareas-Share-point*Share*point\Taskkill\si 
+
+                    taskkill /im msedge.exe /f
+
+                    goto Menu_principal
+
+                  :Envio_de_tareas-Share-point*Share*point\Taskkill\no
+                  
+                    taskkill /im msedge.exe /f
+
+                    goto Envio_de_tareas
 
               :Envio_de_tareas-Share-point*Explorador*archivos*combinados
                 
@@ -373,14 +461,26 @@
 
                 set /p respuesta= ** Termino de realizar las actividades?   **
 
-                if %respuesta%==si goto Menu_principal
-                if %respuesta%==no goto Envio_de_tareas
+                if %respuesta%==si goto Envio_de_tareas-Share-point*Explorador*archivos*combinados\Taskkill\si
+                if %respuesta%==no goto Envio_de_tareas-Share-point*Explorador*archivos*combinados\Taskkill\no
+
+                  :Envio_de_tareas-Share-point*Explorador*archivos*combinados\Taskkill\si
+ 
+                    taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+
+                    goto Menu_principal
+
+                  :Envio_de_tareas-Share-point*Explorador*archivos*combinados\Taskkill\no
+
+                    taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+
+                    goto Envio_de_tareas
 
               :Envio_de_tareas-Share-point*Abrir*todos*programas*enviar*Share*point
 
-                cd "C:\Users\Christopher Muzo\AppData\Local\Programs\Opera GX"
-                dir "C:\Users\Christopher Muzo\AppData\Local\Programs\Opera GX"
-                start https://educacionec-my.sharepoint.com/:f:/g/personal/martha_ashqui_educacion_gob_ec/Enp4DXltIGxOm4MMf7YVxn0BtBuYp9v-Bg-F_gF-PG1J1A?e=ii8uG3
+                cd "C:\Program Files (x86)\Microsoft\Edge\Application"
+                dir "C:\Program Files (x86)\Microsoft\Edge\Application"
+                start msedge.exe https://educacionec-my.sharepoint.com/:f:/g/personal/martha_ashqui_educacion_gob_ec/Enp4DXltIGxOm4MMf7YVxn0BtBuYp9v-Bg-F_gF-PG1J1A?e=ii8uG3
 
                 cd "%SystemRoot%"
                 dir "%SystemRoot%"
@@ -398,8 +498,22 @@
 
                 set /p respuesta= ** Termino de realizar las actividades?   **
 
-                if %respuesta%==si goto Menu_principal
-                if %respuesta%==no goto Envio_de_tareas
+                if %respuesta%==si goto Envio_de_tareas-Share-point*Abrir*todos*programas*enviar*Share*point\Taskkill\si
+                if %respuesta%==no goto Envio_de_tareas-Share-point*Abrir*todos*programas*enviar*Share*point\Taskkill\no
+
+                  :Envio_de_tareas-Share-point*Abrir*todos*programas*enviar*Share*point\Taskkill\si
+
+                    taskkill /im msedge.exe /f
+                    taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+
+                    goto Menu_principal
+
+                  :Envio_de_tareas-Share-point*Abrir*todos*programas*enviar*Share*point\Taskkill\no
+
+                    taskkill /im msedge.exe /f
+                    taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+
+                    goto Envio_de_tareas
 
       :Envio_de_tareas-Correo-electronico 
 
@@ -452,8 +566,20 @@
 
                 set /p respuesta= ** Termino de realizar las actividades?   **
 
-                if %respuesta%==si goto Menu_principal
-                if %respuesta%==no goto Envio_de_tareas
+                if %respuesta%==si goto Envio_de_tareas-Correo-electronico\Taskkill\si
+                if %respuesta%==no goto Envio_de_tareas-Correo-electronico\Taskkill\no
+
+                  :Envio_de_tareas-Correo-electronico\Taskkill\si
+
+                    taskkill /im thunderbird.exe /f
+
+                    goto Menu_principal
+
+                  :Envio_de_tareas-Correo-electronico\Taskkill\no
+
+                    taskkill /im thunderbird.exe /f
+
+                    goto Envio_de_tareas
 
               :Envio_de_tareas-Correo-electronico*Explorador*archivos*combinados
 
@@ -473,8 +599,20 @@
 
                 set /p respuesta= ** Termino de realizar las actividades?   **
 
-                if %respuesta%==si goto Menu_principal
-                if %respuesta%==no goto Envio_de_tareas
+                if %respuesta%==si goto Envio_de_tareas-Correo-electronico*Explorador*archivos*combinados\Taskkill\si
+                if %respuesta%==no goto Envio_de_tareas-Correo-electronico*Explorador*archivos*combinados\Taskkill\no
+
+                :Envio_de_tareas-Correo-electronico*Explorador*archivos*combinados\Taskkill\si
+
+                  taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+
+                  goto Menu_principal
+
+                :Envio_de_tareas-Correo-electronico*Explorador*archivos*combinados\Taskkill\no
+
+                  taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+
+                  goto Envio_de_tareas
 
               :Envio_de_tareas-Correo-electronico*Abrir*todos*programas*enviar*Thunderbird
 
@@ -498,8 +636,22 @@
 
                 set /p respuesta= ** Termino de realizar las actividades?   **
 
-                if %respuesta%==si goto Menu_principal
-                if %respuesta%==no goto Envio_de_tareas
+                if %respuesta%==si goto Envio_de_tareas-Correo-electronico*Abrir*todos*programas*enviar*Thunderbird\Taskkill\si
+                if %respuesta%==no goto Envio_de_tareas-Correo-electronico*Abrir*todos*programas*enviar*Thunderbird\Taskkill\no
+
+                :Envio_de_tareas-Correo-electronico*Abrir*todos*programas*enviar*Thunderbird\Taskkill\si
+
+                  taskkill /im thunderbird.exe /f
+                  taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+
+                  goto Menu_principal
+
+                :Envio_de_tareas-Correo-electronico*Abrir*todos*programas*enviar*Thunderbird\Taskkill\no
+
+                  taskkill /im thunderbird.exe /f
+                  taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+
+                  goto Envio_de_tareas
 
   :Proceso_completo
 
@@ -552,8 +704,8 @@
         start NitroPDF.exe
 
         cd "%SystemRoot%"
-	    dir "%SystemRoot%"
-		start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Escaneados"
+	      dir "%SystemRoot%"
+	    	start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Escaneados"
         start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Combinados"
 
         echo     ##   ##                    #######                    ###### 
@@ -583,9 +735,9 @@
 
           :Envio_de_tareas-Share-point*Abrir*todos*programas*enviar*Share*point
 
-            cd "C:\Users\Christopher Muzo\AppData\Local\Programs\Opera GX"
-            dir "C:\Users\Christopher Muzo\AppData\Local\Programs\Opera GX"
-            start https://educacionec-my.sharepoint.com/:f:/g/personal/martha_ashqui_educacion_gob_ec/Enp4DXltIGxOm4MMf7YVxn0BtBuYp9v-Bg-F_gF-PG1J1A?e=ii8uG3
+            cd "C:\Program Files (x86)\Microsoft\Edge\Application"
+            dir "C:\Program Files (x86)\Microsoft\Edge\Application"
+            start msedge.exe https://educacionec-my.sharepoint.com/:f:/g/personal/martha_ashqui_educacion_gob_ec/Enp4DXltIGxOm4MMf7YVxn0BtBuYp9v-Bg-F_gF-PG1J1A?e=ii8uG3
 
             cd "%SystemRoot%"
             dir "%SystemRoot%"
