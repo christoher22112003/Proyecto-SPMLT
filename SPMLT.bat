@@ -368,14 +368,16 @@
     echo ==   1.Share point                                             ==
   	echo ==   2.Correo electronico                                      ==
     echo  ---------------------------------------------------------------
-    echo ==   4.Volver al menu principal                                ==
-    echo ==   5.Salir                                                   ==
+    echo ==   3.Volver al menu principal                                ==
+    echo ==   4.Salir                                                   ==
     echo  ---------------------------------------------------------------
 
     set /p respuesta= Que programa necesita abrir?
     
     if %respuesta%==1 goto Envio_de_tareas-Share-point
     if %respuesta%==2 goto Envio_de_tareas-Correo-electronico
+    if %respuesta%==3 goto Menu_principal 
+    if %respuesta%==4 goto Salir
 
       :Envio_de_tareas-Share-point
 
@@ -682,14 +684,14 @@
 
     set /p respuesta= Deseas empezar el proceso completo del envio de tareas ?  
 
-    if %respuesta%==1 goto Proceso_completo-Si
+    if %respuesta%==1 goto Proceso_completo-escaneado
     if %respuesta%==2 goto Menu_principal
     if %respuesta%==3 goto Menu_principal
     if %respuesta%==4 goto Salir
-    if %respuesta%==si goto Proceso_completo-si
+    if %respuesta%==si goto Proceso_completo-escaneado
     if %respuesta%==no goto Menu_principal
 
-      :Proceso_completo-si
+      :Proceso_completo-escaneado
 
         cd "C:\Program Files (x86)\epson\Epson Scan 2\Core"
         dir "C:\Program Files (x86)\epson\Epson Scan 2\Core"
@@ -699,89 +701,199 @@
         dir "%SystemRoot%"
         start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Escaneados"
 
-        cd "C:\Program Files\Nitro\Pro\13"
-        dir "C:\Program Files\Nitro\Pro\13"
-        start NitroPDF.exe
-
-        cd "%SystemRoot%"
-	      dir "%SystemRoot%"
-	    	start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Escaneados"
-        start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Combinados"
-
-        echo     ##   ##                    #######                    ###### 
-        echo     ### ###                     ##   #                    # ## # 
-        echo     #######                     ## #                        ## 
-        echo     #######                     ####                        ## 
-        echo     ## # ##                     ## #                        ## 
-        echo     ##   ##                     ##   #                      ## 
-        echo     ##   ##                    #######                     #### 
-        echo                                                                  .
-
-        echo  ****************************************************************
-        echo **                  Metodos de envio de tareas                  **
+        echo **             Termino de realizar los procesos?             **
         echo  ----------------------------------------------------------------
-        echo ==   1.Share Point
-        echo ==   2.Correo Electronico
+        echo ==   1.Si
+        echo ==   2.No
         echo ==   3.Volver al menu principal                                 ==
         echo ==   4.Salir                                                    ==
         echo  ----------------------------------------------------------------
 
-        set /p respuesta= Porque metodo desea enviar las tareas?
+        set /p respuesta= Termino de realizar los procesos?
 
-        if %respuesta%==1 goto Envio_de_tareas-Share-point*Abrir*todos*programas*enviar*Share*point
-        if %respuesta%==2 goto Envio_de_tareas-Correo-electronico*Abrir*todos*programas*enviar*Thunderbird
-        if %respuesta%==3 goto Menu_principal
-        if %respuesta%==4 goto Salir
+        if %respuesta%==1 goto Proceso_completo\Taskkill\escaneado
+        if %respuesta%==2 goto Proceso_completo\Taskkill\escaneado
+        if %respuesta%==3 goto Proceso_completo\Taskkill\escaneado
+        if %respuesta%==4 goto Proceso_completo\Taskkill\escaneado
+        if %respuesta%==si goto Proceso_completo\Taskkill\escaneado
+        if %respuesta%==no goto Proceso_completo\Taskkill\escaneado
 
-          :Envio_de_tareas-Share-point*Abrir*todos*programas*enviar*Share*point
+          :Proceso_completo\Taskkill\escaneado
 
-            cd "C:\Program Files (x86)\Microsoft\Edge\Application"
-            dir "C:\Program Files (x86)\Microsoft\Edge\Application"
-            start msedge.exe https://educacionec-my.sharepoint.com/:f:/g/personal/martha_ashqui_educacion_gob_ec/Enp4DXltIGxOm4MMf7YVxn0BtBuYp9v-Bg-F_gF-PG1J1A?e=ii8uG3
+            taskkill /im es2launcher.exe /f
+            taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
 
-            cd "%SystemRoot%"
-            dir "%SystemRoot%"
-            start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Combinados"
+            if %respuesta%==1 goto Proceso_completo-union
+            if %respuesta%==2 goto Menu_principal
+            if %respuesta%==3 goto Menu_principal
+            if %respuesta%==4 goto Salir
+            if %respuesta%==si goto Proceso_completo-union
+            if %respuesta%==no goto Menu_principal
 
-            echo   #####     ###    ####      ######  ###### 
-            echo  ##   ##   ## ##    ##         ##     ##  ## 
-            echo  ##       ##   ##   ##         ##     ##  ## 
-            echo   #####   ##   ##   ##         ##     ##### 
-            echo       ##  #######   ##         ##     ## ## 
-            echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
-            echo   #####   ##   ##  #######   ######  #### ## 
-            echo                                            .
-            echo  ******************************************
+              :Proceso_completo-union
 
-            set /p respuesta= ** Termino de realizar las actividades?   **
+                cd "C:\Program Files\Nitro\Pro\13"
+                dir "C:\Program Files\Nitro\Pro\13"
+                start NitroPDF.exe
 
-            if %respuesta%==si goto Menu_principal
-            if %respuesta%==no goto Proceso_completo
+                cd "%SystemRoot%"
+                dir "%SystemRoot%"
+                start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Escaneados"
+                start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Combinados"
 
-          :Envio_de_tareas-Correo-electronico*Abrir*todos*programas*enviar*Thunderbird
+                echo **             Termino de realizar los procesos?             **
+                echo  ----------------------------------------------------------------
+                echo ==   1.Si
+                echo ==   2.No
+                echo ==   3.Volver al menu principal                                 ==
+                echo ==   4.Salir                                                    ==
+                echo  ----------------------------------------------------------------
 
-            cd "C:\Program Files\Mozilla Thunderbird"
-            dir "C:\Program Files\Mozilla Thunderbird"
-            start thunderbird.exe
+                set /p respuesta= Termino de realizar los procesos?
 
-            cd "%SystemRoot%"
-            dir "%SystemRoot%"
-            start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Combinados"
+                if %respuesta%==1 goto Proceso_completo\Taskkill\union
+                if %respuesta%==2 goto Proceso_completo\Taskkill\union
+                if %respuesta%==3 goto Proceso_completo\Taskkill\union
+                if %respuesta%==4 goto Proceso_completo\Taskkill\union
+                if %respuesta%==si goto Proceso_completo\Taskkill\union
+                if %respuesta%==no goto Proceso_completo\Taskkill\union
 
-            echo   #####     ###    ####      ######  ###### 
-            echo  ##   ##   ## ##    ##         ##     ##  ## 
-            echo  ##       ##   ##   ##         ##     ##  ## 
-            echo   #####   ##   ##   ##         ##     ##### 
-            echo       ##  #######   ##         ##     ## ## 
-            echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
-            echo   #####   ##   ##  #######   ######  #### ## 
-            echo                                            .
-            echo  ******************************************
+                  :Proceso_completo\Taskkill\union
 
-            set /p respuesta= ** Termino de realizar las actividades?   **
+                    taskkill /im NitroPDF.exe /f
+                    taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
 
-            if %respuesta%==si goto Menu_principal
-            if %respuesta%==no goto Proceso_completo
+                    if %respuesta%==1 goto Proceso_completo-envio
+                    if %respuesta%==2 goto Menu_principal
+                    if %respuesta%==3 goto Menu_principal
+                    if %respuesta%==4 goto Salir
+                    if %respuesta%==si goto Proceso_completo-envio
+                    if %respuesta%==no goto Menu_principal
+
+                      :Proceso_completo-envio
+
+                        echo     ##   ##                    #######                    ###### 
+                        echo     ### ###                     ##   #                    # ## # 
+                        echo     #######                     ## #                        ## 
+                        echo     #######                     ####                        ## 
+                        echo     ## # ##                     ## #                        ## 
+                        echo     ##   ##                     ##   #                      ## 
+                        echo     ##   ##                    #######                     #### 
+                        echo                                                                  .
+
+                        echo  ****************************************************************
+                        echo **                  Metodos de envio de tareas                  **
+                        echo  ----------------------------------------------------------------
+                        echo ==   1.Share Point
+                        echo ==   2.Correo Electronico
+                        echo ==   3.Volver al menu principal                                 ==
+                        echo ==   4.Salir                                                    ==
+                        echo  ----------------------------------------------------------------
+
+                        set /p respuesta= Porque metodo desea enviar las tareas?
+
+                        if %respuesta%==1 goto Envio_de_tareas-Share-point*Abrir*todos*programas*enviar*Share*point
+                        if %respuesta%==2 goto Envio_de_tareas-Correo-electronico*Abrir*todos*programas*enviar*Thunderbird
+                        if %respuesta%==3 goto Menu_principal
+                        if %respuesta%==4 goto Salir
+
+                          :Envio_de_tareas-Share-point*Abrir*todos*programas*enviar*Share*point
+
+                            cd "C:\Program Files (x86)\Microsoft\Edge\Application"
+                            dir "C:\Program Files (x86)\Microsoft\Edge\Application"
+                            start msedge.exe https://educacionec-my.sharepoint.com/:f:/g/personal/martha_ashqui_educacion_gob_ec/Enp4DXltIGxOm4MMf7YVxn0BtBuYp9v-Bg-F_gF-PG1J1A?e=ii8uG3
+
+                            cd "%SystemRoot%"
+                            dir "%SystemRoot%"
+                            start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Combinados"
+
+                            echo   #####     ###    ####      ######  ###### 
+                            echo  ##   ##   ## ##    ##         ##     ##  ## 
+                            echo  ##       ##   ##   ##         ##     ##  ## 
+                            echo   #####   ##   ##   ##         ##     ##### 
+                            echo       ##  #######   ##         ##     ## ## 
+                            echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
+                            echo   #####   ##   ##  #######   ######  #### ## 
+                            echo                                            .
+                            echo  ******************************************
+
+                            echo **             Termino de realizar los procesos?             **
+                            echo  ----------------------------------------------------------------
+                            echo ==   1.Si
+                            echo ==   2.No
+                            echo ==   3.Volver al menu principal                                 ==
+                            echo ==   4.Salir                                                    ==
+                            echo  ----------------------------------------------------------------
+
+                            set /p respuesta= Termino de realizar los procesos?
+
+                            if %respuesta%==1 goto Proceso_completo\Taskkill\envio*sp
+                            if %respuesta%==2 goto Proceso_completo\Taskkill\envio*sp
+                            if %respuesta%==3 goto Proceso_completo\Taskkill\envio*sp
+                            if %respuesta%==4 goto SProceso_completo\Taskkill\envio*sp
+                            if %respuesta%==si goto Proceso_completo\Taskkill\envio*sp
+                            if %respuesta%==no goto Proceso_completo\Taskkill\envio*sp
+
+                              :Proceso_completo\Taskkill\envio*sp
+
+                                taskkill /im msedge.exe /f
+                                taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+
+                                if %respuesta%==1 goto Menu_principal
+                                if %respuesta%==2 goto Menu_principal
+                                if %respuesta%==3 goto Menu_principal
+                                if %respuesta%==4 goto Salir
+                                if %respuesta%==si goto Menu_principal
+                                if %respuesta%==no goto Menu_principal
+
+                          :Envio_de_tareas-Correo-electronico*Abrir*todos*programas*enviar*Thunderbird
+
+                            cd "C:\Program Files\Mozilla Thunderbird"
+                            dir "C:\Program Files\Mozilla Thunderbird"
+                            start thunderbird.exe
+
+                            cd "%SystemRoot%"
+                            dir "%SystemRoot%"
+                            start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Combinados"
+
+                            echo   #####     ###    ####      ######  ###### 
+                            echo  ##   ##   ## ##    ##         ##     ##  ## 
+                            echo  ##       ##   ##   ##         ##     ##  ## 
+                            echo   #####   ##   ##   ##         ##     ##### 
+                            echo       ##  #######   ##         ##     ## ## 
+                            echo  ##   ##  ##   ##   ##  ##     ##     ## ## 
+                            echo   #####   ##   ##  #######   ######  #### ## 
+                            echo                                            .
+                            echo  ******************************************
+
+                            echo **             Termino de realizar los procesos?             **
+                            echo  ----------------------------------------------------------------
+                            echo ==   1.Si
+                            echo ==   2.No
+                            echo ==   3.Volver al menu principal                                 ==
+                            echo ==   4.Salir                                                    ==
+                            echo  ----------------------------------------------------------------
+
+                            set /p respuesta= Termino de realizar los procesos?
+
+                            if %respuesta%==1 goto Proceso_completo\Taskkill\envio*cr
+                            if %respuesta%==2 goto Proceso_completo\Taskkill\envio*cr
+                            if %respuesta%==3 goto Proceso_completo\Taskkill\envio*cr
+                            if %respuesta%==4 goto Proceso_completo\Taskkill\envio*cr
+                            if %respuesta%==si goto Proceso_completo\Taskkill\envio*cr
+                            if %respuesta%==no goto Proceso_completo\Taskkill\envio*cr
+
+                              :Proceso_completo\Taskkill\envio*cr
+
+                                taskkill /im thunderbird.exe /f
+                                taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
+
+                                if %respuesta%==1 goto Menu_principal
+                                if %respuesta%==2 goto Menu_principal
+                                if %respuesta%==3 goto Menu_principal
+                                if %respuesta%==4 goto Salir
+                                if %respuesta%==si goto Menu_principal
+                                if %respuesta%==no goto Menu_principal
   :Salir
 
     exit
