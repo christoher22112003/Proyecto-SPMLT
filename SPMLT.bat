@@ -313,10 +313,6 @@
 
       :Union_de_tareas*Abrir*todos*programas*union
 
-        cd "C:\Program Files\Nitro\Pro\13"
-        dir "C:\Program Files\Nitro\Pro\13"
-        start NitroPDF.exe
-
         cd "%SystemRoot%"
 			  dir "%SystemRoot%"
 			  start explorer.exe "M:\Documents\Ofimatica\Edicion de documentos\Escaneados"
@@ -339,14 +335,12 @@
 
           :Union_de_tareas*Abrir*todos*programas*union\Taskkill\si
 
-            taskkill /im NitroPDF.exe /f
             taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
 
             goto Menu_principal
 
           :Union_de_tareas*Abrir*todos*programas*union\Taskkill\no
 
-            taskkill /im NitroPDF.exe /f
             taskkill /fi "IMAGENAME eq explorer.exe" /fi "WINDOWTITLE eq M*"
 
             goto Union_de_tareas
@@ -731,10 +725,6 @@
             if %respuesta%==no goto Menu_principal
 
               :Proceso_completo-union
-
-                cd "C:\Program Files\Nitro\Pro\13"
-                dir "C:\Program Files\Nitro\Pro\13"
-                start NitroPDF.exe
 
                 cd "%SystemRoot%"
                 dir "%SystemRoot%"
