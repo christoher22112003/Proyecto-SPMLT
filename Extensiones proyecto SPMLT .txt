@@ -1,0 +1,7 @@
+Lista de extensiones de se utilizan para el proyecto SPMMLT
+
+1. Bluloco Dark Theme 
+2. Iconfont-preview
+3.Material Icon Theme
+3.Spanish Language Pack for Visual Studio code
+4.Vscode-pdf
